@@ -6,4 +6,9 @@
     <RootNamespace>Xadrez_CSharp</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="2-Aplicacao\" />
+    <Folder Include="3-Dominio\" />
+  </ItemGroup>
+
 </Project>

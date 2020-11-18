@@ -7,8 +7,6 @@ namespace Xadrez_CSharp
     {
         static void Main(string[] args)
         {
-            
-
             Console.ReadKey();
         }
     }

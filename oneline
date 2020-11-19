@@ -1,0 +1,64 @@
+[33mcommit 6c0a93bbb2f341b27282386c40ed83f163c60165[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: FlavioOrdoneDev <flavio.addworks@hotmail.com>
+Date:   Wed Nov 18 15:55:26 2020 -0300
+
+    Comecando a implementar o metodo que imprime o tabuleiro
+
+[1mdiff --git a/1-Apresentacao/Tabuleiro.cs b/1-Apresentacao/Tabuleiro.cs[m
+[1mindex 7b72aac..623ea3c 100644[m
+[1m--- a/1-Apresentacao/Tabuleiro.cs[m
+[1m+++ b/1-Apresentacao/Tabuleiro.cs[m
+[36m@@ -17,5 +17,10 @@[m [mnamespace _1_Apresentacao[m
+             Colunas = colunas;[m
+             Pecas = new Peca[linhas, colunas];[m
+         }[m
+[32m+[m
+[32m+[m[32m        public Peca Peca(int linha, int coluna)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            return Pecas[linha, coluna];[m
+[32m+[m[32m        }[m
+     }[m
+ }[m
+[1mdiff --git a/Program.cs b/Program.cs[m
+[1mindex 04f2154..8013165 100644[m
+[1m--- a/Program.cs[m
+[1m+++ b/Program.cs[m
+[36m@@ -7,6 +7,9 @@[m [mnamespace Xadrez_CSharp[m
+     {[m
+         static void Main(string[] args)[m
+         {[m
+[32m+[m[32m            Tabuleiro tab = new Tabuleiro(8, 8);[m
+[32m+[m[32m            Tela.ImprimirTabuleiro(tab);[m
+[32m+[m
+             Console.ReadKey();[m
+         }[m
+     }[m
+[1mdiff --git a/Tela.cs b/Tela.cs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..13623de[m
+[1m--- /dev/null[m
+[1m+++ b/Tela.cs[m
+[36m@@ -0,0 +1,23 @@[m
+[32m+[m[32m﻿using _1_Apresentacao;[m
+[32m+[m[32musing System;[m
+[32m+[m
+[32m+[m[32mnamespace Xadrez_CSharp[m
+[32m+[m[32m{[m
+[32m+[m[32m    public class Tela[m
+[32m+[m[32m    {[m
+[32m+[m[32m        public static void  ImprimirTabuleiro(Tabuleiro tabuleiro)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            for (int i = 0; i < tabuleiro.Linhas; i++)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                for (int j = 0; j < tabuleiro.Colunas; j++)[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    if (tabuleiro.Peca(i, j) == null)[m
+[32m+[m[32m                        Console.Write("- ");[m
+[32m+[m[32m                    else[m
+[32m+[m[32m                        Console.Write(tabuleiro.Peca(i, j) + " ");[m
+[32m+[m[32m                }[m
+[32m+[m[32m                Console.WriteLine();[m
+[32m+[m[32m            }[m[41m            [m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m

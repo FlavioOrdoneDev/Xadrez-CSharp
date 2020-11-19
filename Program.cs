@@ -11,20 +11,24 @@ namespace Xadrez_CSharp
 
             try
             {
-                //Tabuleiro tab = new Tabuleiro(8, 8);
+                Tabuleiro tab = new Tabuleiro(8, 8);
 
-                //tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
-                //tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(1, 3));
-                //tab.ColocarPeca(new Rei(tab, Cor.Preta), new Posicao(2, 4));
+                tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
+                tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(1, 3));
+                tab.ColocarPeca(new Rei(tab, Cor.Preta), new Posicao(0, 7));
 
-                //Tela.ImprimirTabuleiro(tab);
+                tab.ColocarPeca(new Torre(tab, Cor.Branca), new Posicao(7, 0));
+                tab.ColocarPeca(new Torre(tab, Cor.Branca), new Posicao(7, 6));
+                tab.ColocarPeca(new Rei(tab, Cor.Branca), new Posicao(7, 7));
 
-                PosicaoXadrez pos = new PosicaoXadrez('c', 7);
-                Console.WriteLine(pos);
+                Tela.ImprimirTabuleiro(tab);
 
-                Console.WriteLine(pos.ToPosicao());
+                //PosicaoXadrez pos = new PosicaoXadrez('c', 7);
+                //Console.WriteLine(pos);
 
-            
+                //Console.WriteLine(pos.ToPosicao());
+
+
             }
             catch (TabuleiroException e)
             {

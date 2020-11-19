@@ -45,7 +45,7 @@ namespace _1_Apresentacao
 
         public bool PosicaoValida(Posicao posicao)
         {
-            if (posicao.Linha < 0 || posicao.Linha >= Linhas -1 || posicao.Coluna < 0 || posicao.Coluna > Colunas -1)
+            if (posicao.Linha < 0 || posicao.Linha >= Linhas || posicao.Coluna < 0 || posicao.Coluna > Colunas -1)
                 return false;
             return true;
         }

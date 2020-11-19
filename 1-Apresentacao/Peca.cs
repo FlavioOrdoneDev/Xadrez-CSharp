@@ -18,5 +18,10 @@ namespace _1_Apresentacao
             Cor = cor;
             QuantidadeMovimentos = 0;
         }
+
+        public void IncrementarMovimentos()
+        {
+            QuantidadeMovimentos++;
+        }
     }
 }

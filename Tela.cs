@@ -1,4 +1,5 @@
 ﻿using _1_Apresentacao;
+using _3_Dominio;
 using System;
 
 namespace Xadrez_CSharp
@@ -9,7 +10,7 @@ namespace Xadrez_CSharp
         {
             for (int i = 0; i < tabuleiro.Linhas; i++)
             {
-                Console.Write(8 - i + " ");
+                Console.Write(8 - i + "  ");
                 for (int j = 0; j < tabuleiro.Colunas; j++)
                 {
                     if (tabuleiro.Peca(i, j) == null)
@@ -25,7 +26,8 @@ namespace Xadrez_CSharp
                 Console.WriteLine();
             }
 
-            Console.Write("  a b c d e f g h");
+            Console.WriteLine();
+            Console.Write("   a b c d e f g h");
         }
 
         public static void ImprimirPeca(Peca peca)
@@ -41,6 +43,15 @@ namespace Xadrez_CSharp
                 Console.Write(peca);
                 Console.ForegroundColor = aux;
             }
+        }
+
+        public static PosicaoXadrez LerPosicaoXadrez()
+        {
+            string s = Console.ReadLine();
+            char coluna = s[0];
+            int linha = int.Parse(s[1] + "");
+
+            return new PosicaoXadrez(coluna, linha);
         }
     }
 }

@@ -90,7 +90,7 @@ namespace _3_Dominio
 
         public void ValidarPosicaoDeDestino(Posicao origem, Posicao destino)
         {
-            if (!Tabuleiro.Peca(origem).PodeMoverParaPosicao(destino))
+            if (!Tabuleiro.Peca(origem).MovimentoPossivel(destino))
                 throw new TabuleiroException("Posição de destino inválida!");            
         }
 

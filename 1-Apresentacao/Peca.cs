@@ -44,7 +44,7 @@ namespace _1_Apresentacao
             return false;
         }
 
-        public bool PodeMoverParaPosicao(Posicao pos)
+        public bool MovimentoPossivel(Posicao pos)
         {
             return MovimentosPossiveis()[pos.Linha, pos.Coluna];
         }

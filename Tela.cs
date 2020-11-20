@@ -27,8 +27,7 @@ namespace Xadrez_CSharp
             {
                 Console.WriteLine("XEQUEMATE!");
                 Console.WriteLine("Vencedor: " + partida.JogadorAtual);
-            }
-            
+            }            
         }
 
         public static void ImprimirPecasCapturadas(Partida partida)

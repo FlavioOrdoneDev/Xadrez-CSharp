@@ -24,6 +24,11 @@ namespace _1_Apresentacao
             QuantidadeMovimentos++;
         }
 
+        public void DecrementarMovimentos()
+        {
+            QuantidadeMovimentos--;
+        }
+
         public bool ExisteMovimentosPossiveis()
         {
             bool[,] mat = MovimentosPossiveis();

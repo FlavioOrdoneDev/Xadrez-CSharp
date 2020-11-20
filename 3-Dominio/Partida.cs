@@ -12,6 +12,7 @@ namespace _3_Dominio
         public Cor JogadorAtual { get; private set; }
         public bool Terminada { get; set; }
         public bool Xeque { get; private set; }
+        public Peca VulneravelEnPassant { get; private set; }
 
         private HashSet<Peca> Pecas;
         private HashSet<Peca> Capturadas;
@@ -23,6 +24,7 @@ namespace _3_Dominio
             JogadorAtual = Cor.Branca;
             Terminada = false;
             Xeque = false;
+            VulneravelEnPassant = null;
             Pecas = new HashSet<Peca>();
             Capturadas = new HashSet<Peca>();
             ColocarPecas();
@@ -154,6 +156,14 @@ namespace _3_Dominio
                 Turno++;
                 MudaJogador();
             }
+
+            Peca p = Tabuleiro.Peca(destino);
+
+            // #jogadaespecial en passant
+            if (p is Peao && (destino.Linha == origem.Linha - 2 || destino.Linha == origem.Linha + 2))
+                VulneravelEnPassant = p;
+            else
+                VulneravelEnPassant = null;
         }
 
         public void ValidarPosicaoDeOrigem(Posicao pos)

@@ -71,8 +71,8 @@ namespace Xadrez_CSharp
                 Console.WriteLine();
             }
 
-            Console.WriteLine();
             Console.Write("   a b c d e f g h");
+            Console.WriteLine();
         }
 
         public static void ImprimirTabuleiro(Tabuleiro tabuleiro, bool[,] posicoesPossiveis)
@@ -94,9 +94,9 @@ namespace Xadrez_CSharp
                 }
                 Console.WriteLine();
             }
-
-            Console.WriteLine();
+            
             Console.Write("   a b c d e f g h");
+            Console.WriteLine();
             Console.BackgroundColor = fundoOriginal;
         }
 

@@ -7,10 +7,12 @@ namespace _3_Dominio
 {
     public class Rei : Peca
     {
-        public Rei(Tabuleiro tabuleiro, Cor cor)
+
+        private Partida partida;
+        public Rei(Tabuleiro tabuleiro, Cor cor, Partida partida)
             : base(tabuleiro, cor)
         {
-
+            this.partida = partida;
         }
 
         private bool PodeMover(Posicao posicao)
